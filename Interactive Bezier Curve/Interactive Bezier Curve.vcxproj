@@ -147,7 +147,6 @@
     <ClInclude Include="..\include\scene.h" />
     <ClInclude Include="..\include\shader.h" />
     <ClInclude Include="..\include\surface.h" />
-    <ClInclude Include="..\src\main.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\bezier1.cpp" />

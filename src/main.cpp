@@ -13,13 +13,13 @@ using namespace std;
 
 
 // Constants
-const unsigned int SCR_W = 600;
-const unsigned int SCR_H = 600;
+const unsigned int SCR_W = 700;
+const unsigned int SCR_H = 700;
 const unsigned int SCR_MIN_W = 300;
 const unsigned int SCR_MIN_H = 300;
-const unsigned int SCR_MAX_W = 700;
-const unsigned int SCR_MAX_H = 700;
-const char* WINDOW_TITLE = "Bezier";
+const unsigned int SCR_MAX_W = 750;
+const unsigned int SCR_MAX_H = 750;
+const char* WINDOW_TITLE = "Interactive Bezier Curve";
 
 // Pointer to a GLFWwindow object
 GLFWwindow* window;
@@ -42,10 +42,12 @@ void toggleDisplayMode()
 {
 	if (wireframeMode)
 	{
+		// Enable polygon fill mode
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
 	else
 	{
+		// Enable polygon wireframe mode
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	}
 	wireframeMode = !wireframeMode;

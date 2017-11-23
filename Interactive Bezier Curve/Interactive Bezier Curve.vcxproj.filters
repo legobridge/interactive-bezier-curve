@@ -30,9 +30,6 @@
     <ClInclude Include="..\include\surface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\bezier1.cpp">

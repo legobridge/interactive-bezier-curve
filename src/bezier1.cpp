@@ -5,11 +5,13 @@ using namespace std;
 
 namespace bezier
 {
+	// Return linearly interpolated point between a and b
 	glm::vec3 lerp(float t, glm::vec3 a, glm::vec3 b)
 	{
 		return (1 - t) * a + t * b;
 	}
 
+	// Perform the linear interpolation on each consecutive pair of points
 	vector<glm::vec3> iterate(float t, vector<glm::vec3> points)
 	{
 		vector<glm::vec3> new_points;
@@ -23,6 +25,7 @@ namespace bezier
 
 	}
 
+	// Return vector of points on the computed Bezier curve
 	vector<glm::vec3> bezier(vector<glm::vec3> points, float delta_t)
 	{
 		float t = 0;

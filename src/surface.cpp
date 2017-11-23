@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Return a mesh that defines a surface of revolution about the Y-axis
 Mesh Surface::getSurface(vector<glm::vec3> controlPoints, float delta_a)
 {
 	vector<glm::vec3> curve = bezier::bezier(controlPoints);

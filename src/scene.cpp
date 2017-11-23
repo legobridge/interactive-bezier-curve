@@ -28,6 +28,7 @@ vector<glm::vec3>::iterator Scene::findControlPoint(glm::vec3 position)
 			return it;
 		}
 	}
+	// If not found, return the end of the vector
 	return controlPoints.end();
 }
 
@@ -35,6 +36,7 @@ vector<glm::vec3>::iterator Scene::findControlPoint(glm::vec3 position)
 void Scene::addControlPoint(glm::vec3 controlPoint)
 {
 	controlPoints.push_back(controlPoint);
+	// Sort control points in ascending order of Y-coordinate
 	sort(controlPoints.begin(), controlPoints.end(),
 		[](const glm::vec3 &lhs, const glm::vec3 &rhs)
 	{
@@ -46,9 +48,9 @@ void Scene::addControlPoint(glm::vec3 controlPoint)
 void Scene::drawYAxis()
 {
 	vector<glm::vec3> vertices;
-	vertices.push_back(glm::vec3(0.0f, -0.9f, 0.0f));
-	vertices.push_back(glm::vec3(0.0f, 0.9f, 0.0f));
-	glm::vec3 colorVector(0.0f, 0.8f, 0.0f);
+	vertices.push_back(glm::vec3(0.0f, -1.0f, 0.0f));
+	vertices.push_back(glm::vec3(0.0f, 1.0f, 0.0f));
+	glm::vec3 colorVector(0.1f, 0.7f, 0.2f);
 
 	lineShader.use();
 	glBindVertexArray(lineVAO);
