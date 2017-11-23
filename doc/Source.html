@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>Playground | Source</title>
+        <link rel="stylesheet" type="text/css" href="style.css">    
+    </head>
+    <body>
+        <h1>Documentation</h1>
+
+        <a href="./overview.html"><btn>|| Go Back ||</btn></a>    
+
+        <h2>Source Files</h2>
+        <br>
+
+        <h3 id=bench>| bench.cpp </h3>
+		<h4>|| Constructor</h4>
+        <p class="bold">Bench::Bench(float angle)</p>
+        <p>Creates one bench from cuboids and cylinders oriented at the given angle.</p>
+        <br><hr><br>
+
+        <h3 id=main>| main.cpp </h3>
+        <h4>|| Constant Fields</h4>
+        <p class="bold">const unsigned int SCR_W = 1366
+            <br>const unsigned int SCR_H = 768</p>
+        <p>Screen width and height.</p>
+        <p class="bold">const unsigned int SCR_MIN_W = 640
+            <br>const unsigned int SCR_MIN_H = 360</p>
+        <p>Minimum screen width and height.</p>
+        <p class="bold">const unsigned int SCR_MAX_W = 1366
+            <br>const unsigned int SCR_MAX_H = 768</p>
+        <p>Maximum screen width and height.</p>
+        <p class="bold">const float MOUSE_SENSITIVITY = 0.2f</p>
+        <p>Mouse sensitivity.</p>
+        <p class="bold">const char* WINDOW_TITLE = "Playground"</p>
+        <p>Window title.</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">float lastX = SCR_W / 2
+            <br>float lastY = SCR_H / 2</p>
+        <p>Mouse cursor position.</p>
+        <p class="bold">GLFWwindow* window</p>
+        <p>Pointer to a GLFWwindow object.</p>
+        <p class="bold">Scene* myScene</p>
+        <p>Pointer to a Scene object.</p>
+        <h4>|| Member Methods</h4>
+        <p class="bold">void framebuffer_size_callback(GLFWwindow* window, int width, int height)</p>
+        <p>Callback function for Framebuffer resizing</p>
+        <p class="bold">void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)</p>
+        <p>Callback function for keypress processing-<ul>
+            <li><b>Esc</b> key closes the window.
+            <li><b>W</b> key moves camera forward.
+            <li><b>S</b> key moves camera backward.
+            <li><b>A</b> key makes camera strafe left.
+            <li><b>D</b> key makes camera strafe right.
+            <li><b>P</b> key toggles the day/night cycle.
+            <li><b>[</b> key slows down the day/night cycle.
+            <li><b>]</b> key speeds up the day/night cycle.</p></ul>
+        <p class="bold">void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos)</p>
+        <p>Callback function for mouse movement processing. Moving the mouse pans the screen in the direction of movement.</p>
+        <p class="bold">void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)</p>
+        <p>Callback funtion for mouse scrolling processing. Scrolling up increases camera speed, and scrolling down decreases camera speed.</p>
+        <p class="bold">bool initializeOpenGL()</p>
+        <p>Initialse OpenGL by initialising GLFW, creating window and adding size constraints, registering callback funtions, and loading OpenGL functions using GLAD.</p>
+        <p class="bold">int main()</p>
+        <p>Initialise OpenGL, create new Scene object, render the window, and deallocate all resources upon window closing.</p>
+        <br><hr><br>
+
+        <h3 id=mesh>| mesh.cpp </h3>
+        <h4>|| Constructors</h4>
+        <p class="bold">Mesh::Mesh()</p>
+        <p>Empty constructor</p>
+		<p class="bold">Mesh::Mesh(vector<Vertex> vertices, vector<unsigned int> indices)</p>
+        <p>To initialize object using input</p>
+        <br><hr><br>
+
+        <h3 id=model>| model.cpp </h3>
+        <h4>|| Constructor</h4>
+        <p class="bold">Model::Model()</p>
+        <p>Loads a model from the given path.</p>
+        <h4>|| Member Methods</h4>
+        <p class="bold">loadModel(string path)</p>
+        <p>Function definition to load a model</p>
+		<p class="bold">processNode(aiNode *node, const aiScene *scene)</p>
+        <p>Function definition to process all nodes of a mesh (if any)</p>
+		<p class="bold">processMesh(aiMesh *mesh, const aiScene *scene)</p>
+        <p>Function definition to process all vertices</p>
+        <br><hr><br>
+        
+		<h3 id=path>| path.cpp </h3>
+        <h4>|| Constructor</h4>
+        <p class="bold">Path::Path()</p>
+        <p>Creates path from cuboidal segments.</p>
+        <br><hr><br>        
+
+		<h3 id=roundabout>| roundabout.cpp </h3>
+		<h4>|| Constructor</h4>
+        <p class="bold">Roundabout::Roundabout()</p>
+        <p>Creates roundabout from cylindrical segments.</p>
+        <br><hr><br>
+
+        <h3 id=scene>| scene.cpp </h3>
+        <p>Renders the scene to be displayed, by importing or creating and colouring various models to be used and placing them in the scene. It also adds lighting, with a day/night cycle and variable time control.</p>        
+        <h4>|| Constructor</h4>
+        <p class="bold">Scene::Scene()</p>
+        <p>Builds and uses shader, sets time and time scale, camera position and camera movement parameters, creates or loads the models and sets the colours to be used.</p>
+        <h4>|| Destructor</h4>
+        <p class="bold">Scene::~Scene()</p>
+        <p>Deletes and deallocates all resources.</p>
+        <h4>|| Member Methods</h4>
+        <p class="bold">void Scene::toggleTime()</p>
+        <p>Toggles the state of time pause and unpause.</p>
+        <p class="bold">void Scene::slowDownTime()</p>
+        <p>Slows down time.</p>
+        <p class="bold">void Scene::speedUpTime()</p>
+        <p>Speeds up time.</p>
+        <p class="bold">void Scene::changeSpeed(float by)</p>
+        <p>Changes camera movement speed.</p>
+        <p class="bold">void Scene::moveIn()</p>
+        <p>Moves into the scene.</p>
+        <p class="bold">void Scene::moveOut()</p>
+        <p>Moves out of the scene.</p>
+        <p class="bold">void Scene::strafeLeft()</p>
+        <p>Strafes toward the left.</p>
+        <p class="bold">void Scene::strafeRight()</p>
+        <p>Strafes toward the right.</p>
+        <p class="bold">void Scene::pan(float xoffset, float yoffset)</p>
+        <p>Pans the camera.</p>
+        <p class="bold">void Scene::drawObject(Mesh mesh, glm::mat4 model, glm::vec3 colorVector)</p>
+        <p>Draws an object given a mesh and the corresponding colours and orientation and position.</p>
+        <p class="bold">void Scene::drawTerrain()</p>
+        <p>Draws the terrain elements (grass and bare ground).</p>
+        <p class="bold">void Scene::drawPaths()</p>
+        <p>Draws the paths within the park using primitives.</p>
+        <p class="bold">void Scene::drawBenches()</p>
+        <p>Draws the benches using primitives.</p>
+        <p class="bold">void Scene::drawSeeSaws()</p>
+        <p>Draws the see saws using primitives.</p>
+        <p class="bold">void Scene::drawRoundabout()</p>
+        <p>Draws the roundabout (merry-go-round) using primitives.</p>
+        <p class="bold">void Scene::drawSwing()</p>
+        <p>Draws the swing using primitives.</p>
+        <p class="bold">void Scene::drawFence()</p>
+        <p>Draws the fence using the fence model (<a href="./models.html#fence">fence.obj</a>).</p>
+        <p class="bold">void Scene::drawJungleGym()</p>
+        <p>Draws the jungle gym using the jungle gym object (<a href="./models.html#jungle-gym">jungle-gym.obj</a>).</p>
+        <p class="bold">void Scene::drawDome()</p>
+        <p>Draws the dome jungle gym using the dome jungle gym object (<a href="./models.html#dome-jungle-gym">dome-jungle-gym.obj</a>).</p>
+        <p class="bold">void Scene::drawSpiralSlide()</p>
+        <p>Draws the spiral slide using the spiral slide object (<a href="./models.html#spiral-slide">spiral-slide.obj</a>).</p>
+        <p class="bold">void Scene::drawObjects()</p>
+        <p>Rendering function which calls te other functions to create the scene.</p>
+        <br><hr><br>
+
+		<h3 id=see-saw>| see-saw.cpp </h3>
+		<h4>|| Constructor</h4>
+        <p class="bold">SeeSaw::SeeSaw()</p>
+        <p>Creates see-saw from cuboids and cylinders.</p>
+        <br><hr><br>
+
+        <p class="bold">class Shader</p>
+        <p>This class represents an abstraction of the shader program to be used. It compiles the vertex shader and the fragment shader and provides a handy <b>use</b> function.</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Shader(const char* vertexPath, const char* fragmentPath)</p>
+        <p>Instantiates an object of this class using the file paths of <b>vertexShader</b> and <b>fragmentShader</b>.</p>
+        <br><hr><br>
+
+		<h3 id=shape>| shape.cpp </h3>
+        <h4>|| Member Methods</h4>
+        <p class="bold">getCuboidalMesh(float x, float y, float z)</p>
+        <p>Function definition to draw a cuboid</p>
+		<p class="bold">getCylindricalMesh(float r, float h)</p>
+        <p>Function definition to draw a cylinder</p>
+        <br><hr><br>
+		
+		<h3 id=swing>| swing.cpp </h3>
+		<h4>|| Constructor</h4>
+        <p class="bold">Swing::Swing()</p>
+        <p>Creates a swing from cuboids and cylinders.</p>
+        <br><hr><br>
+
+        <a href="./source.html"><btn>|| Back to Top ||</btn></a>
+        
+    </body>
+</html>

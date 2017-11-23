@@ -1,0 +1,229 @@
+<html>
+    <head>
+        <title>Playground | Headers</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Documentation</h1>
+
+        <a href="./overview.html"><btn>|| Go Back ||</btn></a>
+
+        <h2>Header Files</h2>
+
+        <br><h3 id=bench>| bench.h</h3>     
+        <p class="bold">class Bench</p>
+        <p>Creates a bench</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Bench(float angle)</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">std::vector<Mesh> meshesw</p>
+        <p>Mesh of wooden parts of the bench</p>	
+        <p class="bold">std::vector<glm::mat4> modelsw</p>
+        <p>Model matrix wooden parts of the bench</p>
+        <p class="bold">std::vector<Mesh> meshesm</p>
+        <p>Mesh of metallic parts of the bench</p>
+        <p class="bold">std::vector<glm::mat4> modelsm</p>
+        <p>Model matrix wooden parts of the bench</p>
+        <br><hr><br>
+
+        <br><h3 id=mesh>| mesh.h</h3>
+        <p class="bold">class Mesh</p>
+        <p>Stores mesh data of an object</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Mesh()</p>
+        <p class="bold">Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices)</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">std::vector<Vertex> vertices</p>
+        <p>Mesh vertices</p>		
+        <p class="bold">std::vector<unsigned int> indices</p>
+        <p>Mesh indices</p>
+        <br><hr><br>
+
+        <br><h3 id=model>| model.h</h3>
+        <p class="bold">class Model</p>
+        <p>Generates a model of class Mesh</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Model(char *path)</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">std::vector<Mesh> meshes</p>
+        <h4>|| Member Methods</h4>
+        <p class="bold">void loadModel(std::string path)</p>	
+        <p class="bold">void processNode(aiNode *node, const aiScene *scene)</p>
+        <p class="bold">processMesh(aiMesh *mesh, const aiScene *scene)</p>
+        <br><hr><br>     
+
+        <br><h3 id=path>| path.h</h3>
+        <p class="bold">class Path</p>
+        <p>Creates a path</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Path()</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">std::vector<Mesh> meshes</p>
+        <p class="bold">std::vector<glm::mat4> models</p>
+        <br><hr><br>        
+
+        <br><h3 id=roundabout>| roundabout.h</h3>
+        <p class="bold">class Roundabout</p>
+        <p>Creates a roundabout</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Roundabout()</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">glm::mat4 modelb</p>
+        <p>To create the base</p>
+        <p class="bold">glm::mat4 modelp</p>
+        <p>To create the central pole</p>
+        <p class="bold">std::vector<Mesh> meshesh</p>
+        <p class="bold">std::vector<glm::mat4> modelsh</p>
+        <p>To create the handles</p>
+        <p class="bold">Mesh meshb</p>
+        <p>Generates base object</p>
+        <p class="bold">Mesh meshp</p>
+        <p>Generates pole object</p>
+        <br><hr><br>
+        
+        <br><h3 id=scene>| scene.h</h3>
+        <p class="bold">class Scene</p>
+        <p>Generates the scene</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Scene()</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">const float SCR_W = 1366.0f</p>
+        <p class="bold">const float SCR_H = 768.0f</p>
+        <p>Screen dimensions</p>
+        <p class="bold">const float WORLD_W = 3000.0f</p>
+        <p class="bold">const float WORLD_H = 1000.0f</p>
+        <p class="bold">const float WORLD_D = 2000.0f</p>
+        <p>World dimensions</p>
+        <p class="bold">Shader* myShader</p>
+        <p>Pointer to a Shader object</p>
+        <p class="bold">unsigned int VAO</p>
+        <p>The Vertex Array Object to draw from</p>
+        <p class="bold">float time</p>
+        <p>In-Program time</p>
+        <p class="bold">float timescale</p>
+        <p>Timescale measure for day-night cycle</p>
+        <p class="bold">bool paused</p>
+        <p>Time pause state</p>
+        <p class="bold">float cameraSpeed</p>
+        <p>Base camera movement speed</p>
+        <p class="bold">float pitch</p>
+        <p class="bold">float yaw</p>
+        <p class="bold">float roll</p>
+        <p>Euler angles</p>
+        <p class="bold">glm::vec3 cameraPos</p>
+        <p class="bold">glm::vec3 cameraFront</p>
+        <p class="bold">glm::vec3 cameraUp</p>
+        <p>Camera properties</p>
+        <p class="bold">glm::mat4 view</p>
+        <p>View matrix</p>
+        <p class="bold">glm::mat4 projection</p>
+        <p>Projection matrix</p>
+        <p class="bold">Model* fenceModel</p>
+        <p class="bold">Model* jungleGymModel</p>
+        <p class="bold">Model* domeModel</p>
+        <p class="bold">Model* slideModel</p>
+        <p>Models made in Blender</p>
+        <p class="bold">Path* pathSegments</p>
+        <p>Path object</p>
+        <p class="bold">std::vector<Bench*> benches</p>
+        <p>Vector of bench objects</p>
+        <p class="bold">SeeSaw* ss</p>
+        <p>See-saw object</p>
+        <p class="bold">Roundabout* roundabout</p>
+        <p>Roundabout object</p>
+        <p class="bold">Swing* swing</p>
+        <p>Swing object</p>
+        <p class="bold">std::vector<glm::vec3> colors</p>
+        <p>Vector of colours</p>
+        <h4>|| Member Methods</h4>
+        <p class="bold">void toggleTime()</p>
+        <p>Toggle time</p>
+        <p class="bold">void slowDownTime()</p>
+        <p>Slow down time</p>
+        <p class="bold">void speedUpTime()</p>
+        <p>Speed up time</p>
+        <p class="bold">void changeSpeed(float by)</p>
+        <p>Change camera movement speed</p>
+        <p class="bold">void moveIn()</p>
+        <p>Move into the scene</p>
+        <p class="bold">void moveOut()</p>
+        <p>Move out of the scene</p>
+        <p class="bold">void strafeLeft()</p>
+        <p>Strafe to the left</p>
+        <p class="bold">void strafeRight()</p>
+        <p>Strafe to the right</p>
+        <p class="bold">void pan(float xoffset, float yoffset)</p>
+        <p>Pan the camera</p>
+        <p class="bold">void drawTerrain()</p>
+        <p>Draw the ground</p>
+        <p class="bold">void drawObject(Mesh mesh, glm::mat4 model, glm::vec3 colorVector)</p>
+        <p>Draw an object using arguments</p>
+        <p class="bold">void drawPaths()</p>
+        <p>Draw the paths</p>
+        <p class="bold">void drawBenches()</p>
+        <p>Draw the benches</p>
+        <p class="bold">oid drawSeeSaws()</p>
+        <p>Draw the see-saw</p>
+        <p class="bold">void drawRoundabout()</p>
+        <p>Draw the roundabout</p>
+        <p class="bold">void drawSwing()</p>
+        <p>Draw the swing</p>
+        <p class="bold">void drawObjects()</p>
+        <p>Call rendering functions for all the pre-computed objects</p>
+        <br><hr><br>
+        
+        <br><h3 id=seesaw>| seesaw.h</h3>
+        <p class="bold">class Seesaw</p>
+        <p>Creates a see-saw</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">SeeSaw()</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">std::vector<Mesh> meshesw</p>
+        <p>Mesh of wooden parts of the see-saw</p>	
+        <p class="bold">std::vector<glm::mat4> modelsw</p>
+        <p>Model matrix wooden parts of the see-saw</p>
+        <p class="bold">std::vector<Mesh> meshesm</p>
+        <p>Mesh of metallic parts of the see-saw</p>
+        <p class="bold">std::vector<glm::mat4> modelsm</p>
+        <p>Model matrix wooden parts of the see-saw</p>
+        <p class="bold">std::vector<Mesh> meshes_base</p>
+        <p>Mesh of the base</p>
+        <p class="bold">std::vector<glm::mat4> models_base</p>
+        <p>Model matrix the base</p>
+        <br><hr><br>
+        
+        <br><h3 id=shader>| shader.h</h3>
+        <p class="bold">class Shader</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Shader(const char* vertexPath, const char* fragmentPath)</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">unsigned int ID</p>
+        <h4>|| Member Methods</h4>
+        <p class="bold">void use()</p>
+        <p>Activate the shader</p>
+        <p class="bold">void checkCompileErrors(unsigned int shader, std::string type)</p>
+        <p>Utility function for checking shader compilation/linking errors</p>
+        <br><hr><br>
+
+        <h3 id=swing>| swing.h</h3>
+        <p class="bold">class Swing</p>
+        <h4>|| Constructor</h4>
+        <p class="bold">Swing()</p>
+        <h4>|| Member Fields</h4>
+        <p class="bold">std::vector<Mesh> meshesw</p>
+        <p>Mesh of wooden parts of the swing</p>	
+        <p class="bold">std::vector<glm::mat4> modelsw</p>
+        <p>Model matrix wooden parts of the swing</p>
+        <p class="bold">std::vector<Mesh> meshesm</p>
+        <p>Mesh of metallic parts of the swing</p>
+        <p class="bold">std::vector<glm::mat4> modelsm</p>
+        <p>Model matrix wooden parts of the swing</p>
+        <p class="bold">std::vector<Mesh> meshes_rope</p>
+        <p>Mesh of the rope</p>
+        <p class="bold">std::vector<glm::mat4> models_rope</p>
+        <p>Model matrix the rope</p>
+        <br><hr><br>
+        <a href="./headers.html"><btn>|| Back to Top ||</btn></a>
+
+    </body>
+</html>
