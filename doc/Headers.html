@@ -14,9 +14,9 @@
         <h4>|| Member Methods</h4>
         <p class="bold">glm::vec3 lerp(float t, glm::vec3 a, glm::vec3 b)</p>
         <p>Returns linearly interpolated point between a and b</p>	
-        <p class="bold">std::vector<glm::vec3> iterate(float t, std::vector<glm::vec3> points)</p>
+        <p class="bold">std::vector&ltglm::vec3&gt iterate(float t, std::vector&ltglm::vec3&gt points)</p>
         <p>Perform the linear interpolation on each consecutive pair of points</p>
-        <p class="bold">std::vector<glm::vec3> bezier(std::vector<glm::vec3> points, float delta_t = 0.05f)</p>
+        <p class="bold">std::vector&ltglm::vec3&gt bezier(std::vector&ltglm::vec3&gt points, float delta_t = 0.05f)</p>
         <p>Returns a Bezier curve given control points and order</p>
         <br><hr><br>
 
@@ -26,11 +26,11 @@
         <p class="bold">class Mesh</p>
         <p>Stores mesh data of an object</p>
         <h4>|| Constructor</h4>
-        <p class="bold">Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices)</p>
+        <p class="bold">Mesh(std::vector&ltVertex&gt vertices, std::vector&ltunsigned int&gt indices)</p>
         <h4>|| Member Fields</h4>
-        <p class="bold">std::vector<Vertex> vertices</p>
+        <p class="bold">std::vector&ltVertex&gt vertices</p>
         <p>Mesh vertices</p>		
-        <p class="bold">std::vector<unsigned int> indices</p>
+        <p class="bold">std::vector&ltunsigned int&gt indices</p>
         <p>Mesh indices</p>
         <br><hr><br>
         
@@ -42,7 +42,7 @@
         <h4>|| Member Fields</h4>
         <p class="bold">Shader lineShader</p>
         <p>A line Shader object</p>
-        <p class="bold">std::vector<glm::vec3> controlPoints</p>
+        <p class="bold">std::vector&ltglm::vec3&gt controlPoints</p>
         <p>Vector of control points</p>
         <p class="bold">bool picked</p>
         <p>Stores selection status of control points</p>
@@ -51,12 +51,12 @@
         <p class="bold">Mesh bezierSurface</p>
         <p>Mesh to store the Bezier surface</p>
         <p class="bold">unsigned int lineVAO
-            <br>unsigned int surfaceVAO</p>
+        <br>unsigned int surfaceVAO</p>
         <p>Vertex Array Objects to draw line and surface from</p>
         <h4>|| Member Methods</h4>
         <p class="bold">void drawControlPoints()</p>
         <p>Draws the control points</p>
-        <p class="bold">std::vector<glm::vec3>::iterator findControlPoint(glm::vec3 position)</p>
+        <p class="bold">std::vector&ltglm::vec3&gt::iterator findControlPoint(glm::vec3 position)</p>
         <p>Checks for a control point at the given position, else sends to the end of the line</p>
         <p class="bold">void addControlPoint(glm::vec3 controlPoint)</p>
         <p>Adds a control point</p>
@@ -84,7 +84,7 @@
         <h3 id=surface>| surface.h</h3>
         <p class="bold">class Surface</p>
         <h4>|| Member Functions</h4>
-        <p class="bold">Mesh getSurface(std::vector<glm::vec3> controlPoints, float delta_a = 10.0f)</p>
+        <p class="bold">Mesh getSurface(std::vector&ltglm::vec3&gt controlPoints, float delta_a = 10.0f)</p>
         <p>Given aset of control points, creates a Bezier curve adn returns the mesh formed by its surface of rotation around the Y axis</p>	
         <br><hr><br>
         <a href="./headers.html"><btn>|| Back to Top ||</btn></a>

@@ -7,8 +7,6 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include "scene.h"
-#include "main.h"
-
 using namespace std;
 
 
