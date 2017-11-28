@@ -184,7 +184,7 @@ void Scene::drawBezierSurface()
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Normal));
 
-	glm::vec3 lightPos = glm::vec3(1.0f, 3.0f, 0.0f);
+	glm::vec3 lightPos = glm::vec3(1.0f, 3.0f, -2.0f);
 	float lightVal = 1.0f;
 	glm::vec3 lightColor = glm::vec3(lightVal, lightVal, lightVal);
 

@@ -1,3 +1,2 @@
-# Ignore the build and .vs dirs
-build
+# Ignore the .vs dir
 .vs
